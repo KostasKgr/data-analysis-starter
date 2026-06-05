@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: customer_order_summary
+    description: "One row per customer with simple order and completed revenue metrics."
+    columns:
+      - name: customer_id
+        description: "Stable customer identifier."
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Customer display name."
+      - name: segment
+        description: "Customer market segment."
+      - name: order_count
+        description: "Total orders for the customer across all statuses."
+      - name: completed_order_count
+        description: "Completed orders for the customer."
+      - name: completed_revenue
+        description: "Revenue from completed orders only."
+      - name: latest_order_date
+        description: "Most recent order date for the customer."

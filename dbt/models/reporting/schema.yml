@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: order_dashboard
+    description: "Order-level reporting view enriched with customer attributes for the dashboard."
+    columns:
+      - name: order_id
+        description: "Stable order identifier."
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer that placed the order."
+        data_tests:
+          - not_null
+      - name: customer_name
+        description: "Customer display name."
+      - name: segment
+        description: "Customer market segment."
+      - name: order_date
+        description: "Date the order was placed."
+        data_tests:
+          - not_null
+      - name: status
+        description: "Current order status."
+        data_tests:
+          - not_null
+      - name: gross_amount
+        description: "Gross order amount."
+      - name: completed_revenue
+        description: "Gross amount for completed orders, otherwise zero."
+      - name: order_month
+        description: "Month bucket used for dashboard trends."

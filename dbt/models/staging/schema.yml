@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Customer records loaded from the sample CSV file."
+    columns:
+      - name: customer_id
+        description: "Stable customer identifier from the sample CSV."
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Customer display name."
+        data_tests:
+          - not_null
+      - name: segment
+        description: "Customer market segment."
+        data_tests:
+          - not_null
+      - name: signup_date
+        description: "Date the customer signed up."
+      - name: country
+        description: "Customer country."
+
+  - name: stg_orders
+    description: "Order records loaded from the sample JSON file."
+    columns:
+      - name: order_id
+        description: "Stable order identifier from the sample JSON."
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer that placed the order."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: order_date
+        description: "Date the order was placed."
+        data_tests:
+          - not_null
+      - name: status
+        description: "Current order status."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['completed', 'pending', 'returned', 'cancelled']
+      - name: item_count
+        description: "Number of items in the order."
+      - name: gross_amount
+        description: "Gross order amount before status-based reporting filters."

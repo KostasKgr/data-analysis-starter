@@ -1,0 +1,82 @@
+[
+  {
+    "order_id": "O1001",
+    "customer_id": "C001",
+    "order_date": "2025-04-01",
+    "status": "completed",
+    "item_count": 4,
+    "gross_amount": 1280.50
+  },
+  {
+    "order_id": "O1002",
+    "customer_id": "C002",
+    "order_date": "2025-04-03",
+    "status": "completed",
+    "item_count": 2,
+    "gross_amount": 245.00
+  },
+  {
+    "order_id": "O1003",
+    "customer_id": "C003",
+    "order_date": "2025-04-08",
+    "status": "returned",
+    "item_count": 1,
+    "gross_amount": 89.99
+  },
+  {
+    "order_id": "O1004",
+    "customer_id": "C001",
+    "order_date": "2025-04-15",
+    "status": "completed",
+    "item_count": 3,
+    "gross_amount": 760.00
+  },
+  {
+    "order_id": "O1005",
+    "customer_id": "C004",
+    "order_date": "2025-04-20",
+    "status": "completed",
+    "item_count": 5,
+    "gross_amount": 1540.25
+  },
+  {
+    "order_id": "O1006",
+    "customer_id": "C005",
+    "order_date": "2025-04-23",
+    "status": "pending",
+    "item_count": 2,
+    "gross_amount": 320.00
+  },
+  {
+    "order_id": "O1007",
+    "customer_id": "C006",
+    "order_date": "2025-05-02",
+    "status": "completed",
+    "item_count": 6,
+    "gross_amount": 2100.00
+  },
+  {
+    "order_id": "O1008",
+    "customer_id": "C003",
+    "order_date": "2025-05-09",
+    "status": "completed",
+    "item_count": 2,
+    "gross_amount": 450.75
+  },
+  {
+    "order_id": "O1009",
+    "customer_id": "C004",
+    "order_date": "2025-05-12",
+    "status": "cancelled",
+    "item_count": 1,
+    "gross_amount": 199.00
+  },
+  {
+    "order_id": "O1010",
+    "customer_id": "C002",
+    "order_date": "2025-05-18",
+    "status": "completed",
+    "item_count": 3,
+    "gross_amount": 615.25
+  }
+]

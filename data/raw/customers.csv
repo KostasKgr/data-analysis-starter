@@ -1,0 +1,7 @@
+customer_id,customer_name,segment,signup_date,country
+C001,Ada Lovelace,Enterprise,2025-01-08,United Kingdom
+C002,Grace Hopper,Small Business,2025-01-22,United States
+C003,Katherine Johnson,Mid-Market,2025-02-14,United States
+C004,Dorothy Vaughan,Enterprise,2025-03-03,United States
+C005,Mary Jackson,Small Business,2025-03-18,United States
+C006,Hedy Lamarr,Mid-Market,2025-04-05,Austria

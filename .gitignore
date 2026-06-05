@@ -1,4 +1,8 @@
-data/
+data/*
+!data/.gitkeep
+!data/raw/
+!data/raw/customers.csv
+!data/raw/orders.json
 taskfile.local.yml
 .venv
 *.duckdb

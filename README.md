@@ -1,7 +1,10 @@
+# Data Analysis Starter
 
-# Uses duckdb
+This project is a small local analytics starter using dbt, DuckDB, and Streamlit.
+dbt reads a sample customer CSV and order JSON file from `data/raw/`, builds a
+few models in DuckDB, and the dashboard displays the resulting reporting views.
 
-## Installation
+## DuckDB CLI
 
 ```sh
 wget https://install.duckdb.org/v1.5.2/duckdb_cli-linux-amd64.zip
@@ -10,17 +13,17 @@ mv duckdb ~/.local/bin
 rm duckdb_cli-linux-amd64.zip
 ```
 
-# Uses dbt
+## dbt
 
 ```sh
-# Python 3.14 was not compatible currently
-uv venv --python 3.12
-uv add dbt-duckdb
-uv run dbt init .
-
-uv run dbt debug --project-dir ./jira --profiles-dir ./jira
 task dbt:run
 task dbt:test
+```
+
+Use the combined verification task when rebuilding and testing together:
+
+```sh
+task dbt:verify
 ```
 
 ## Local dashboard
