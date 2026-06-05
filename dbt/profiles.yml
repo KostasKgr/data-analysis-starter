@@ -8,12 +8,4 @@ dbt:
         memory_limit: 3GB
         preserve_insertion_order: false
 
-    prod:
-      type: duckdb
-      path: prod.duckdb
-      threads: 4
-      settings:
-        memory_limit: 3GB
-        preserve_insertion_order: false
-
   target: dev

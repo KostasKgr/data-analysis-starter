@@ -1,7 +1,7 @@
 [project]
 name = "data-analysis-starter"
 version = "0.1.0"
-description = "Add your description here"
+description = "A local dbt, DuckDB, and Streamlit starter for data analysis."
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [
