@@ -1,0 +1,7 @@
+data/
+taskfile.local.yml
+.venv
+*.duckdb
+.codex
+__pycache__
+*.pyc
