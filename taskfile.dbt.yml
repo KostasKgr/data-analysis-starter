@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  run: uv run dbt run --project-dir ./dbt --profiles-dir ./dbt
+  test: uv run dbt test --project-dir ./dbt --profiles-dir ./dbt --log-level warn
+  verify:
+    desc: Run dbt models and tests sequentially to avoid DuckDB lock conflicts
+    cmds:
+      - task: run
+      - task: test
