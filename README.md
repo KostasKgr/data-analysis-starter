@@ -34,6 +34,10 @@ Install dependencies:
 uv sync
 ```
 
+This README uses [`task`](https://taskfile.dev/) for short commands. If you do
+not have it installed, use the equivalent `uv run ...` commands shown in
+[Common commands](#common-commands).
+
 Build the DuckDB database and run dbt tests:
 
 ```sh
@@ -102,28 +106,42 @@ dashboard-ready calculations in marts.
 
 ## Common commands
 
+The `task` commands are convenience wrappers. The equivalent commands without
+`task` are shown below.
+
 Run dbt models:
 
 ```sh
 task dbt:run
+# without task:
+uv run dbt run --project-dir ./dbt --profiles-dir ./dbt
 ```
 
 Run dbt tests:
 
 ```sh
 task dbt:test
+# without task:
+uv run dbt test --project-dir ./dbt --profiles-dir ./dbt --log-level warn
 ```
 
 Run dbt models and tests sequentially:
 
 ```sh
 task dbt:verify
+# without task:
+uv run dbt run --project-dir ./dbt --profiles-dir ./dbt
+uv run dbt test --project-dir ./dbt --profiles-dir ./dbt --log-level warn
 ```
 
 Run the dashboard:
 
 ```sh
 task dashboard
+# without task:
+cp ./data/dev.duckdb ./data/dashboard.duckdb
+uv run streamlit run dashboard.py --server.headless true
+rm ./data/dashboard.duckdb
 ```
 
 The DuckDB Python package is installed by `uv`. The DuckDB CLI is optional, but
@@ -137,4 +155,3 @@ unzip duckdb_cli-linux-amd64.zip
 mv duckdb ~/.local/bin
 rm duckdb_cli-linux-amd64.zip
 ```
-
