@@ -1,18 +1,14 @@
 # Data Analysis Starter
 
-A compact, runnable analytics project that shows the full local workflow: 
+A compact, runnable analytics project that shows the full local workflow:
 load raw files, model and test them with dbt, store results in DuckDB, and explore them in Streamlit.
 
 ![Streamlit dashboard preview](docs/dashboard.png)
 
 ## What is this?
 
-Data Analysis Starter is a minimal, runnable example of a modern local analytics workflow:
-
-- Raw files live in `data/raw/`.
-- dbt cleans and models the data.
-- DuckDB stores the local analytics database.
-- Streamlit displays the dashboard.
+Data Analysis Starter is a minimal example of how to structure a local analysis
+project from raw inputs to reusable outputs.
 
 The demo uses a customer CSV and an orders JSON file, then builds dashboard-ready
 tables for revenue, order status, monthly trends, recent orders, and customer summaries.
@@ -20,8 +16,8 @@ tables for revenue, order status, monthly trends, recent orders, and customer su
 ## Who is it for?
 
 This starter is for any engineer who wants a practical way to analyze data locally.
-It keeps the setup small, but includes the pieces you need for a real workflow: 
-raw files, dbt models, tests, DuckDB tables, and a dashboard.
+It keeps the setup small while giving you a project shape you can understand,
+run, and adapt quickly.
 
 ## What problem does it solve?
 
@@ -89,6 +85,21 @@ for local analysis, demos, teaching, and early project exploration.
 - A local DuckDB database at `data/dev.duckdb`, created by dbt.
 - A Streamlit dashboard in `dashboard.py` that reads the mart tables.
 
+## Adapting this starter
+
+1. Replace or add raw files in `data/raw/`.
+2. Update the staging models in `dbt/models/staging/` to read, cast, rename, and
+   lightly clean your raw data.
+3. Add dbt tests in the staging and mart `schema.yml` files for identifiers,
+   required fields, accepted values, and relationships.
+4. Build reusable analysis outputs in `dbt/models/marts/`. These should be the
+   tables your dashboard, notebooks, or ad hoc analysis can query directly.
+5. Point `dashboard.py` at the mart tables that support your analysis.
+
+Keep staging models source-shaped and predictable. Put joins, aggregations, and
+dashboard-ready calculations in marts.
+
+
 ## Common commands
 
 Run dbt models:
@@ -127,16 +138,3 @@ mv duckdb ~/.local/bin
 rm duckdb_cli-linux-amd64.zip
 ```
 
-## Adapting this starter
-
-1. Replace or add raw files in `data/raw/`.
-2. Update the staging models in `dbt/models/staging/` to read, cast, rename, and
-   lightly clean your raw data.
-3. Add dbt tests in the staging and mart `schema.yml` files for identifiers,
-   required fields, accepted values, and relationships.
-4. Build reusable analysis outputs in `dbt/models/marts/`. These should be the
-   tables your dashboard, notebooks, or ad hoc analysis can query directly.
-5. Point `dashboard.py` at the mart tables that support your analysis.
-
-Keep staging models source-shaped and predictable. Put joins, aggregations, and
-dashboard-ready calculations in marts.
