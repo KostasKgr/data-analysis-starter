@@ -1,14 +1,13 @@
 # Data Analysis Starter
 
-A small local analytics project that turns raw customer and order files into
-tested dbt models, a DuckDB database, and a Streamlit dashboard.
+A compact, runnable analytics project that shows the full local workflow: 
+load raw files, model and test them with dbt, store results in DuckDB, and explore them in Streamlit.
 
 ![Streamlit dashboard preview](docs/dashboard.png)
 
 ## What is this?
 
-Data Analysis Starter is a minimal, runnable example of a modern local analytics
-workflow:
+Data Analysis Starter is a minimal, runnable example of a modern local analytics workflow:
 
 - Raw files live in `data/raw/`.
 - dbt cleans and models the data.
@@ -16,15 +15,13 @@ workflow:
 - Streamlit displays the dashboard.
 
 The demo uses a customer CSV and an orders JSON file, then builds dashboard-ready
-tables for revenue, order status, monthly trends, recent orders, and customer
-summaries.
+tables for revenue, order status, monthly trends, recent orders, and customer summaries.
 
 ## Who is it for?
 
-This starter is for analysts, analytics engineers, platform engineers and data-curious
-developers who want a practical project skeleton without setting up cloud infrastructure.
-It is intentionally small enough to understand quickly, but structured enough to
-extend into a real analysis workflow.
+This starter is for any engineer who wants a practical way to analyze data locally.
+It keeps the setup small, but includes the pieces you need for a real workflow: 
+raw files, dbt models, tests, DuckDB tables, and a dashboard.
 
 ## What problem does it solve?
 
