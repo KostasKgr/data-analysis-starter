@@ -184,25 +184,25 @@ def main() -> None:
     chart_columns = st.columns(2)
     with chart_columns[0]:
         st.subheader("Completed Revenue By Segment")
-        st.altair_chart(build_revenue_by_segment_chart(filtered_orders), use_container_width=True)
+        st.altair_chart(build_revenue_by_segment_chart(filtered_orders), width="stretch")
     with chart_columns[1]:
         st.subheader("Orders By Status")
-        st.altair_chart(build_status_chart(filtered_orders), use_container_width=True)
+        st.altair_chart(build_status_chart(filtered_orders), width="stretch")
 
     st.subheader("Monthly Completed Revenue")
-    st.altair_chart(build_monthly_revenue_chart(filtered_orders), use_container_width=True)
+    st.altair_chart(build_monthly_revenue_chart(filtered_orders), width="stretch")
 
     st.subheader("Recent Orders")
     st.dataframe(
         filtered_orders.sort_values(["order_date", "order_id"], ascending=[False, False]),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
     st.subheader("Customer Summary")
     st.dataframe(
         filtered_customers.sort_values("completed_revenue", ascending=False),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
