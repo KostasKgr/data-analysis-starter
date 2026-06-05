@@ -10,7 +10,6 @@ tasks:
     desc: Run the local Streamlit dashboard against dev.duckdb
     cmds:
       # Avoid having a lock on the dev database, because it inhibits development
-      - mkdir -p ./data
       - cp ./data/dev.duckdb ./data/dashboard.duckdb
       - defer: rm ./data/dashboard.duckdb
       - uv run streamlit run dashboard.py --server.headless true
